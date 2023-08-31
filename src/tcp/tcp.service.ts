@@ -1,4 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { Tcp } from './entities/tcp.entity';
 
 @Injectable()
-export class TcpService {}
+export class TcpService {
+
+  private test:Tcp[] = [];
+
+}
