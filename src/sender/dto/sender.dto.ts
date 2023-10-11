@@ -29,13 +29,21 @@ export class SenderDto{
    * B는 srcIP:Port로 SYN_RECV 상태여야 성공 
    */
   @IsOptional()
-  @IsBoolean()
-  readonly isNegative :boolean;
+  @IsString()
+  readonly isNegative :string;
+  
   /**
    * 해당 IP로 들어오는지 체크 요청을 같이 합니다.
    * assertionIP = 1234일 경우
    * recv에서 assertionIP가있을 경우 1234 값을 같이 체크해서 result를 줍니다.
    */
+  @IsOptional()
+  @IsString()
+  readonly assertIP:string;
+
+
+
+
 }
 
 
@@ -55,5 +63,14 @@ export class SenderResDto {
   @IsOptional()
   @IsObject()
   readonly agentStatus:AgentStatusDTO;
+
+
+  /**
+   * 테스트 정보 
+   */
+
+    @IsOptional()
+    @IsString()
+    readonly sendurl:string;
 
 }

@@ -1,8 +1,4 @@
 
-
-
-
-
 /**                  
  * 
  * tcp
@@ -32,6 +28,7 @@ interface AgentStatus{
   src_ip:string;
   dst_ip:string;
 }
+
 interface AgentDTO {
   [index:string]:AgentStatus[]
 }
@@ -39,5 +36,5 @@ interface AgentDTO {
 
 export interface AgentStatusDTO{
   senderAgent:AgentDTO
-  receiverAgent:AgentDTO
+  receiveAgent:AgentDTO
 }
