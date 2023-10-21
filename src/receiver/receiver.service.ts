@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { ReceiverDto } from './dto/receiver.dto';
+import { ReceiverDto ,ReceiverResDto } from './dto/receiver.dto';
 
 
 @Injectable()
@@ -8,8 +8,18 @@ export class ReceiverService {
 
 
 
-  recvTraffic(receiverDto:ReceiverDto){
-    
+  recvTraffic(receiverDto:ReceiverDto):Promise<ReceiverResDto>{
+    return new Promise(async(resolve,reject)=>{
+      try {
+        
+        resolve(true);
+      } catch (error) {
+          reject({
+            error:error,
+            
+          })        
+      }
+    })
   }
 
 

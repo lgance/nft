@@ -11,11 +11,9 @@ export class SenderService {
               let { dstIP,targetPort,isNegative,assertIP } = sendDto;
 
               let usingPort = process.env.SERVER_AGENT_BASIC_PORT;
-
               if(typeof targetPort!=='undefined' && targetPort && targetPort!=="6500"){
                 usingPort = targetPort
               }
-
               let sendRequestURL =  `http://${dstIP}:${usingPort}/recv?assertIP=${assertIP}`;
                 
               let sendResponse = await axios.get(sendRequestURL,{timeout:5000});
@@ -27,7 +25,7 @@ export class SenderService {
                 sendurl:sendRequestURL,
                 agentStatus:{
                   senderAgent:{},
-                  receiverAgent:{}
+                  receiveAgent:{}
                 }
               })
 

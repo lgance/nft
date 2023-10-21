@@ -7,11 +7,6 @@ export class ReceiverDto{
   // @IsNumber()
   // readonly srcIP:number;
 
-  /**
-   * 트래픽을 보낼 대상의 IP 를 입력 합니다.
-   */
-  @IsNumber()
-  readonly dstIP:number;
 
 
   /**
@@ -22,6 +17,7 @@ export class ReceiverDto{
   readonly checkIP:number;
 
 
-
+}
+export class ReceiverResDto{
 
 }
