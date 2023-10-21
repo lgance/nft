@@ -41,9 +41,6 @@ export class SenderDto{
   @IsString()
   readonly assertIP:string;
 
-
-
-
 }
 
 
@@ -64,11 +61,9 @@ export class SenderResDto {
   @IsObject()
   readonly agentStatus:AgentStatusDTO;
 
-
   /**
    * 테스트 정보 
    */
-
     @IsOptional()
     @IsString()
     readonly sendurl:string;

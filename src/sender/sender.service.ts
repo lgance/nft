@@ -20,6 +20,11 @@ export class SenderService {
 
               console.warn(sendResponse.data);
               
+
+              let receiveAgent = {
+
+              }
+              
               resolve({
                 mainResult:"pass",
                 sendurl:sendRequestURL,
