@@ -5,7 +5,7 @@ export class AppController {
 
   @Get()
   home(){
-    return 'Transaction Test Index Router'
+    return 'Transation Router'
   }
 
 }
