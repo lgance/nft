@@ -12,6 +12,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
   imports: [SenderModule, ReceiverModule, ServicesModule,
     ServeStaticModule.forRoot({
       rootPath:join(__dirname,'..','static'),
+      serveRoot:"/"
     })],
   controllers: [ AppController],
   providers: [ ],
