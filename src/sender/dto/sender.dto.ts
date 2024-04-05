@@ -1,5 +1,6 @@
 
 
+import { Optional } from "@nestjs/common";
 import { IsOptional,IsString, IsNumber, IsBoolean, isString, IsObject } from "class-validator";
 // import { AgentStatusDTO } from "../../interface/agent.status";
 
@@ -17,7 +18,7 @@ export class SenderDto{
    */
   @IsOptional()
   @IsString()
-  readonly targetPort:string;
+  readonly dstPort:string;
   /**
    * 통신이 실패할 경우에 대한 케이스 확인 입니다. 
    * true 일 경우 통신이 안되어야 성공입니다.
@@ -30,7 +31,7 @@ export class SenderDto{
    */
   @IsOptional()
   @IsString()
-  readonly isNegative :string;
+  readonly is_negative :string;
   
   /**
    * 해당 IP로 들어오는지 체크 요청을 같이 합니다.
@@ -39,7 +40,19 @@ export class SenderDto{
    */
   @IsOptional()
   @IsString()
-  readonly assertIP:string;
+  readonly check_ip:string;
+
+  @Optional()
+  @IsString()
+  readonly is_ncp_services:string;
+
+  @Optional()
+  @IsString()
+  readonly protocol:string;
+
+  @Optional()
+  @IsString()
+  readonly is_check_tcp_state:string;
 
 }
 

@@ -4,6 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 
 import 'dotenv/config'
 
+let port = 3800;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
@@ -15,7 +16,9 @@ async function bootstrap() {
       transform:true
     })
   )
-  await app.listen(3000);
+
+  console.warn(`Listen Transaction Agent Port ${port}`)
+  await app.listen(port);
 }
 
 
