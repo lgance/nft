@@ -12,7 +12,11 @@ export class ReceiverService {
     return new Promise(async(resolve,reject)=>{
       try {
 
-          let { }  = receiverDto;
+          let { 
+
+
+            
+          }  = receiverDto;
 
           let _result = false
           let receiveStatus = await agentStatus();

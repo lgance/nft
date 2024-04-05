@@ -17,6 +17,7 @@ export class SenderService {
                 protocol,
                 is_check_tcp_state
                } = sendDto;
+               
 
 
               let usingPort = process.env.SERVER_AGENT_BASIC_PORT;
