@@ -8,13 +8,22 @@ export class SenderService {
     sendTraffic(sendDto:SenderDto):Promise<SenderResDto>{
         return new Promise(async(resolve,reject)=>{
             try {
-              let { dstIP,targetPort,isNegative,assertIP } = sendDto;
+              let { 
+                dstIP,
+                dstPort,
+                is_negative,
+                check_ip,
+                is_ncp_services,
+                protocol,
+                is_check_tcp_state
+               } = sendDto;
+
 
               let usingPort = process.env.SERVER_AGENT_BASIC_PORT;
-              if(typeof targetPort!=='undefined' && targetPort && targetPort!=="6500"){
-                usingPort = targetPort
+              if(typeof dstPort!=='undefined' && dstPort && dstPort!=="6500"){
+                usingPort = dstPort
               }
-              let sendRequestURL =  `http://${dstIP}:${usingPort}/recv?assertIP=${assertIP}`;
+              let sendRequestURL =  `http://${dstIP}:${usingPort}/recv?check_ip=${check_ip}`;
                 
               let sendResponse = await axios.get(sendRequestURL,{timeout:5000});
 
