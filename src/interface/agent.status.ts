@@ -35,6 +35,6 @@ interface AgentDTO {
 
 
 export interface AgentStatusDTO{
-  senderAgent:AgentDTO
-  receiveAgent:AgentDTO
+  senderAgent:any
+  receiveAgent:any
 }

@@ -13,18 +13,16 @@ export class ReceiverService {
       try {
 
           let { 
-
-
             
           }  = receiverDto;
 
-          let _result = false
-          let receiveStatus = await agentStatus();
+        console.warn('리시브 DTO');
+        console.warn(receiverDto);
 
+        let receiveAgentStatus = await agentStatus();
 
         resolve({
-          result:_result,
-          status:receiveStatus
+          receiveAgentStatus
         });
       } catch (error) {
           reject({

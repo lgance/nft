@@ -31,7 +31,7 @@ export class SenderDto{
    */
   @IsOptional()
   @IsString()
-  readonly is_negative :string;
+  readonly is_negative :"Y"|"N"|"M";
   
   /**
    * 해당 IP로 들어오는지 체크 요청을 같이 합니다.
@@ -61,8 +61,8 @@ export class SenderResDto {
   /**
    * 최종 테스트 결과를 알려줍니다.
    */
-  @IsString()
-  readonly mainResult:string;
+  @IsBoolean()
+  readonly mainResult:boolean;
 
   /**
    * Agent가 Command Server가 되어 A와 B의 테스트를 관장할 경우 
@@ -81,4 +81,11 @@ export class SenderResDto {
     @IsString()
     readonly sendurl:string;
 
+
+  /**
+   * 테스트 로그 
+   */
+
+  @IsOptional()
+  readonly testLog:any;
 }

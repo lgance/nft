@@ -15,6 +15,4 @@ export class ReceiverController {
     return this.senderService.recvTraffic(receiverDto);
   }
 
-
-
 }

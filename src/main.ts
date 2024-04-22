@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 
 import 'dotenv/config'
+import { agentStatus } from './utils';
 
 let port = 3800;
 async function bootstrap() {
@@ -17,7 +18,10 @@ async function bootstrap() {
     })
   )
 
-  console.warn(`Listen Transaction Agent Port ${port}`)
+  console.warn(`Listen Transaction Agent Port ${port}`);
+
+  agentStatus();
+
   await app.listen(port);
 }
 
