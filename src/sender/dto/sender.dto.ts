@@ -54,6 +54,10 @@ export class SenderDto{
   @IsString()
   readonly is_check_tcp_state:string;
 
+  @Optional()
+  @IsString()
+  readonly testcase_name:string;
+
 }
 
 

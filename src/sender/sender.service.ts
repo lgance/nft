@@ -46,7 +46,15 @@ export class SenderService {
               // +``
               // +``;
 
+	console.warn('is ncp services');
+	console.warn(is_ncp_services);
+	console.warn('protocol');
+	console.warn(protocol);
+	console.warn('is_check_tcp_state');
+	console.warn(is_check_tcp_state);
 
+	console.warn('센드 센드 ㅅ센드 ');
+	console.warn(sendRequestURL);
             // ****************** 테스트 시작
               let sendResponse = await axios.get(sendRequestURL,{timeout:5000});
 

@@ -3,8 +3,17 @@ import * as os from 'node:os'
 
 export async function errorExceptionParse(error:any){
 
+  let parsingErrorExceptionObject = {
+     message:"parsingError",
+     error:"errorExceptionParseError",
+     statusCode:500,
+  };
+ 
+  if(error.response?.data){
+    parsingErrorExceptionObject = error.response.data
+  }
 
-  return 'testErrorLogParsing';
+  return parsingErrorExceptionObject
 }
 
 export async function agentStatus (){
