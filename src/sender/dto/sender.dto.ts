@@ -65,8 +65,8 @@ export class SenderResDto {
   /**
    * 최종 테스트 결과를 알려줍니다.
    */
-  @IsBoolean()
-  readonly mainResult:boolean;
+  @IsString()
+  readonly mainResult:string;
 
   /**
    * Agent가 Command Server가 되어 A와 B의 테스트를 관장할 경우 
